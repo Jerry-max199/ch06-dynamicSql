@@ -1,5 +1,6 @@
 package com.zzjm;
 
+import com.github.pagehelper.PageHelper;
 import com.zzjm.Utils.Myutil;
 import com.zzjm.dao.StudentDao;
 import com.zzjm.domain.Student;
@@ -48,6 +49,16 @@ public class MyTest {
         List<Student> students=studentDao.selectStudentForeach(studentList);
         for (Student student1:students){
             System.out.println(student1);
+        }
+    }
+    @Test
+    public void selectAll(){
+        SqlSession sqlSession=Myutil.getSqlSession();
+        StudentDao studentDao=sqlSession.getMapper(StudentDao.class);
+        PageHelper.startPage(2,3);
+        List<Student> studentList=studentDao.selectStudentAll();
+        for (Student student:studentList){
+            System.out.println(student);
         }
     }
 }

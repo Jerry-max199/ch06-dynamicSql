@@ -31,4 +31,7 @@
             #{stu.id}
         </foreach>
     </select>
+    <select id="selectStudentAll" resultType="com.zzjm.domain.Student">
+        select * from Student order by id
+    </select>
 </mapper>

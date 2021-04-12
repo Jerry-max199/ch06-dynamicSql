@@ -9,4 +9,5 @@ public interface StudentDao {
     List<Student> selectStudentIf(Student student);
     List<Student> selectStudentWhere(Student student);
     List<Student> selectStudentForeach(List<Student> id);
+    List<Student> selectStudentAll();
 }
